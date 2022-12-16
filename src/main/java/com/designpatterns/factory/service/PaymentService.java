@@ -10,7 +10,8 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class PaymentService {
     private final PaymentFactory paymentFactory;
-    public void buildPayment(PaymentType paymentType){
+
+    public void buildPayment(PaymentType paymentType) {
         Payment payment = paymentFactory.buildPayment(paymentType);
         payment.doPayment();
     }
