@@ -18,7 +18,7 @@ public class WebService {
 
     @PostMapping(value = "/pay", consumes = "application/json")
     public ResponseEntity<?> doPayment(@RequestBody PaymentType paymentType) {
-        paymentService.buildPayment(paymentType);
-        return ResponseEntity.ok().build();
+        String response = paymentService.buildPayment(paymentType);
+        return ResponseEntity.ok(response);
     }
 }

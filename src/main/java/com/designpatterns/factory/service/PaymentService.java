@@ -11,8 +11,8 @@ import org.springframework.stereotype.Service;
 public class PaymentService {
     private final PaymentFactory paymentFactory;
 
-    public void buildPayment(PaymentType paymentType) {
+    public String buildPayment(PaymentType paymentType) {
         Payment payment = paymentFactory.buildPayment(paymentType);
-        payment.doPayment();
+        return payment.doPayment();
     }
 }
